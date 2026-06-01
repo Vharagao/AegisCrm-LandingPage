@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aegis CRM | O Escudo Inteligente para suas Vendas</title>
+  <meta name="description" content="Aegis CRM é a solução definitiva de vendas com automação avançada, pipeline vivo interativo e inteligência integrada para proteger e multiplicar seus fechamentos.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ELEMENTOS VIVOS: Holofote de Cursor -->
+  <div class="spotlight-bg" id="spotlight"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <div class="logo-shield"></div>
+      AEGIS<span>CRM</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#pipeline">Pipeline Vivo</a></li>
+        <li><a href="#features">Recursos</a></li>
+        <li><a href="#testimonials">Resultados</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+      </ul>
+    </nav>
+    <button class="glow-btn magnetic-target" onclick="window.location.href='#contato'">Demonstração</button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-badge reveal">Automação de Vendas 2.0</div>
+    <h1 class="reveal"><span class="gradient-text">O escudo definitivo</span><br>para o seu pipeline de vendas</h1>
+    <p class="reveal">Automatize processos repetitivos, blinde seus leads contra o esquecimento e multiplique suas taxas de fechamento com a inteligência ativa do Aegis CRM.</p>
+    <a href="#pipeline" class="glow-btn magnetic-target reveal">Ver Pipeline em Ação ↓</a>
+  </section>
+
+  <!-- PIPELINE INTERATIVO ("PIPELINE VIVO") -->
+  <section class="pipeline-section" id="pipeline">
+    <h2 class="reveal">Experimente o <span class="gradient-text">Pipeline Vivo</span></h2>
+    <p class="subtitle reveal">Arraste os leads entre as colunas ou veja o fluxo inteligente automatizar as ações abaixo.</p>
+    
+    <div class="pipeline-container reveal">
+      <!-- Coluna 1: Novos Leads -->
+      <div class="pipeline-column" id="col-new" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="drop(event, 'col-new')">
+        <div class="column-header">
+          <div class="column-title">
+            <span class="lead-status-indicator" style="background: var(--accent-indigo);"></span>
+            Novos Contatos
+          </div>
+          <span class="column-badge" id="badge-new">3</span>
+        </div>
+        <div class="lead-card" id="lead-1" draggable="true" ondragstart="drag(event)">
+          <div class="lead-name">Victor Aragão</div>
+          <div class="lead-value">R$ 15.000</div>
+          <div class="lead-footer">
+            <span>Interesse: CRM</span>
+            <span>Hoje</span>
+          </div>
+        </div>
+        <div class="lead-card" id="lead-2" draggable="true" ondragstart="drag(event)">
+          <div class="lead-name">Ana Júlia Silva</div>
+          <div class="lead-value">R$ 8.500</div>
+          <div class="lead-footer">
+            <span>Origem: Instagram</span>
+            <span>Hoje</span>
+          </div>
+        </div>
+        <div class="lead-card" id="lead-3" draggable="true" ondragstart="drag(event)">
+          <div class="lead-name">Rafael Santos</div>
+          <div class="lead-value">R$ 22.000</div>
+          <div class="lead-footer">
+            <span>Interesse: Enterprise</span>
+            <span>Ontem</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Em Negociação -->
+      <div class="pipeline-column" id="col-negotiation" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="drop(event, 'col-negotiation')">
+        <div class="column-header">
+          <div class="column-title">
+            <span class="lead-status-indicator" style="background: var(--accent-purple);"></span>
+            Negociação Ativa
+          </div>
+          <span class="column-badge" id="badge-negotiation">1</span>
+        </div>
+        <div class="lead-card" id="lead-4" draggable="true" ondragstart="drag(event)">
+          <div class="lead-name">Mariana Costa</div>
+          <div class="lead-value">R$ 12.000</div>
+          <div class="lead-footer">
+            <span>Proposta Enviada</span>
+            <span>Há 2 dias</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna 3: Ganhos / Fechados -->
+      <div class="pipeline-column" id="col-won" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="drop(event, 'col-won')">
+        <div class="column-header">
+          <div class="column-title">
+            <span class="lead-status-indicator" style="background: var(--accent-emerald);"></span>
+            Contratos Ganhos
+          </div>
+          <span class="column-badge" id="badge-won">0</span>
+        </div>
+        <!-- Vazio inicialmente, pronto para receber cards -->
+      </div>
+    </div>
+  </section>
+
+  <!-- RECURSOS INTELIGENTES -->
+  <section class="features-section" id="features">
+    <h2 class="reveal">Blindagem de ponta a ponta para <span class="gradient-text">vender mais</span></h2>
+    
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <div class="glass-card feature-card reveal">
+        <div class="feature-icon">⚡</div>
+        <h3>Automações Instantâneas</h3>
+        <p>Dispare mensagens automáticas personalizadas no WhatsApp ou e-mail no exato momento em que o lead avança no funil, mantendo o engajamento no topo.</p>
+      </div>
+      <!-- Feature 2 -->
+      <div class="glass-card feature-card reveal">
+        <div class="feature-icon">🛡️</div>
+        <h3>Escudo Antiesquecimento</h3>
+        <p>Alertas inteligentes baseados no comportamento do cliente. A Aegis te avisa ativamente se um lead quente ficar mais de 24h sem acompanhamento.</p>
+      </div>
+      <!-- Feature 3 -->
+      <div class="glass-card feature-card reveal">
+        <div class="feature-icon">📊</div>
+        <h3>Métricas em Tempo Real</h3>
+        <p>Dashboards dinâmicos e preditivos que mostram exatamente de onde vêm seus melhores clientes e qual a previsão de faturamento para o mês.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS / PROVAS SOCIAIS -->
+  <section class="testimonials-section" id="testimonials">
+    <h2 class="reveal">Quem usa, <span class="gradient-text">confia e acelera</span></h2>
+    
+    <div class="testimonial-carousel glass-card reveal">
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">"O Aegis CRM mudou completamente nossa dinâmica comercial. A automação integrada de WhatsApp reduziu nosso tempo de resposta de horas para segundos, e nossa conversão subiu 42% no primeiro mês."</p>
+        <div class="testimonial-author">
+          <div class="author-img">R</div>
+          <div class="author-info">
+            <div class="author-name">Rodrigo Dantas</div>
+            <div class="author-role">CEO da Veloce Marketing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <h2 class="reveal">Perguntas <span class="gradient-text">Frequentes</span></h2>
+    
+    <div class="faq-container reveal">
+      <div class="faq-item">
+        <div class="faq-question">
+          O Aegis CRM se integra com o WhatsApp?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Sim! O Aegis possui integração nativa e automatizada com o WhatsApp. Você pode configurar disparos automáticos de mensagens de texto, imagens e documentos no momento exato em que move o lead de coluna no seu pipeline comercial.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Preciso instalar algum programa na minha máquina?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Não. O Aegis CRM é totalmente na nuvem e roda direto no seu navegador. Porém, oferecemos suporte a ferramentas portáteis caso você trabalhe em ambientes restritos (como computadores corporativos que não permitem instalações globais).
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Como funciona a segurança dos meus dados de leads?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Sua segurança é nossa prioridade absoluta. Todos os dados comerciais são criptografados de ponta a ponta (AES-256) e armazenados em servidores redundantes de alta segurança, agindo como um verdadeiro escudo para suas informações corporativas.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="contato">
+    <h2 class="reveal">Pronto para blindar seu <span class="gradient-text">sucesso comercial?</span></h2>
+    <p class="reveal">Junte-se a centenas de empresas que transformaram o comercial em uma máquina previsível e automática de vendas.</p>
+    <a href="#" class="glow-btn magnetic-target reveal">Adquirir Aegis CRM Agora</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© 2026 Aegis CRM. Todos os direitos reservados. Projetado para a mente humana.</div>
+    <div>Segurança Militar • Alta Conversão • Automação Fluida</div>
+  </footer>
+
+  <!-- JS Link -->
+  <script src="app.js"></script>
+</body>
+</html>
