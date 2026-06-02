@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aegis CRM — Nenhum lead perdido. Nenhuma venda desperdiçada.</title>
+  <meta name="description" content="O Aegis CRM elimina o esquecimento, automatiza o acompanhamento e coloca o seu pipeline no piloto automático — para que você venda mais com o mesmo time.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR SPOTLIGHT -->
+<div id="spotlight" aria-hidden="true"></div>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════ -->
+<header>
+  <a href="#" class="logo" aria-label="Aegis CRM">
+    <div class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 14 14"><polyline points="4,7 6,9 10,5"/></svg>
+    </div>
+    Aegis CRM
+  </a>
+  <a href="#demonstracao" class="btn btn-primary magnetic-btn" id="header-cta">
+    Agendar Demonstração
+  </a>
+</header>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════ -->
+<section class="hero" id="topo">
+  <div class="hero-badge reveal">Para gestores comerciais de PMEs</div>
+
+  <h1 class="reveal delay-1">
+    Seu time tem mais capacidade<br>
+    do que os seus resultados
+    <em>mostram</em>
+  </h1>
+
+  <p class="reveal delay-2">
+    O Aegis CRM elimina o esquecimento, automatiza o acompanhamento
+    e coloca o seu pipeline no piloto automático —&nbsp;para que você venda
+    mais com o mesmo time.
+  </p>
+
+  <div class="hero-cta reveal delay-3">
+    <a href="#demonstracao" class="btn btn-primary btn-lg magnetic-btn" id="hero-cta">
+      Quero ver o Aegis em ação
+    </a>
+    <a href="#pipeline" class="btn btn-outline btn-lg">
+      Ver como funciona
+    </a>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Role para baixo</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ═══ DOR / EMPATIA ═════════════════════════════════════════ -->
+<section class="pain">
+  <p class="section-label reveal">O problema que você conhece</p>
+  <h2 class="reveal delay-1">
+    Por que gestores perdem negócios que
+    já estavam na mão?
+  </h2>
+
+  <div class="pain-grid">
+    <div class="pain-card reveal delay-1">
+      <div class="pain-number">01</div>
+      <h3>Dependência da memória</h3>
+      <p>
+        O vendedor lembra de ligar para o lead mais animado, mas esquece
+        dos outros 23 da lista. Sem sistema, o acompanhamento depende
+        de quem é mais organizado no dia.
+      </p>
+    </div>
+    <div class="pain-card reveal delay-2">
+      <div class="pain-number">02</div>
+      <h3>Planilha que fica obsoleta</h3>
+      <p>
+        A planilha só existe quando alguém lembra de atualizar. O gestor
+        não tem visibilidade real do pipeline e toma decisões com dados
+        de semanas atrás.
+      </p>
+    </div>
+    <div class="pain-card reveal delay-3">
+      <div class="pain-number">03</div>
+      <h3>Follow-up tardio ou ausente</h3>
+      <p>
+        O cliente pediu uma proposta numa quarta. O follow-up veio na
+        segunda seguinte. Nesse intervalo, o concorrente ligou primeiro
+        e fechou.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PIPELINE ANIMADO ══════════════════════════════════════ -->
+<section class="pipeline-section" id="pipeline">
+  <div class="section-inner">
+    <div class="pipeline-header">
+      <p class="section-label reveal">O Aegis em ação</p>
+      <h2 class="reveal delay-1">Seu pipeline, funcionando<br>no <em style="font-style:italic;color:var(--blue-light)">piloto automático</em></h2>
+      <p class="reveal delay-2">
+        Cada lead é acompanhado. Cada etapa é registrada.
+        Cada oportunidade é aproveitada.
+      </p>
+    </div>
+
+    <div class="kanban reveal" id="kanban">
+      <!-- Coluna 1: Novos Contatos -->
+      <div class="kanban-col">
+        <div class="kanban-col-header">
+          <div class="kanban-col-title">
+            <span class="col-dot new"></span>
+            Novos Contatos
+          </div>
+          <span class="kanban-badge" id="badge-new">4</span>
+        </div>
+        <div class="lead-card" id="lc-1">
+          <div class="lead-name">Victor Aragão</div>
+          <div class="lead-company">Aratech Soluções</div>
+          <div class="lead-meta">
+            <span class="lead-value">R$ 18.000</span>
+            <span class="lead-tag">Instagram</span>
+          </div>
+        </div>
+        <div class="lead-card" id="lc-2">
+          <div class="lead-name">Ana Costa</div>
+          <div class="lead-company">AC Imóveis</div>
+          <div class="lead-meta">
+            <span class="lead-value">R$ 8.500</span>
+            <span class="lead-tag">Indicação</span>
+          </div>
+        </div>
+        <div class="lead-card" id="lc-3">
+          <div class="lead-name">Rafael Torres</div>
+          <div class="lead-company">Torres & Filhos</div>
+          <div class="lead-meta">
+            <span class="lead-value">R$ 24.000</span>
+            <span class="lead-tag">LinkedIn</span>
+          </div>
+        </div>
+        <div class="lead-card" id="lc-4">
+          <div class="lead-name">Mariana Lopes</div>
+          <div class="lead-company">ML Consultoria</div>
+          <div class="lead-meta">
+            <span class="lead-value">R$ 12.000</span>
+            <span class="lead-tag">Google Ads</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Em Negociação -->
+      <div class="kanban-col">
+        <div class="kanban-col-header">
+          <div class="kanban-col-title">
+            <span class="col-dot qual"></span>
+            Em Negociação
+          </div>
+          <span class="kanban-badge" id="badge-qual">0</span>
+        </div>
+        <!-- cards movem aqui via JS -->
+      </div>
+
+      <!-- Coluna 3: Ganhos -->
+      <div class="kanban-col">
+        <div class="kanban-col-header">
+          <div class="kanban-col-title">
+            <span class="col-dot won"></span>
+            Contratos Ganhos
+          </div>
+          <span class="kanban-badge" id="badge-won">0</span>
+        </div>
+        <!-- cards movem aqui via JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES (APPLE STYLE) ═══════════════════════════════ -->
+<section class="features" id="recursos">
+  <div class="features-inner">
+
+    <!-- Feature 1: Pipeline automático -->
+    <div class="feature-block">
+      <div class="feature-visual reveal-left" id="vis-1">
+        <div class="vis-pipeline">
+          <div class="vis-col">
+            <div class="vis-col-title"><span class="vis-dot"></span>Novos</div>
+            <div class="vis-card">
+              <div class="vis-card-line wide"></div>
+              <div class="vis-card-line mid"></div>
+            </div>
+            <div class="vis-card animate-move">
+              <div class="vis-card-line wide"></div>
+              <div class="vis-card-line short"></div>
+            </div>
+            <div class="vis-card">
+              <div class="vis-card-line wide"></div>
+              <div class="vis-card-line mid"></div>
+            </div>
+          </div>
+          <div class="vis-col">
+            <div class="vis-col-title"><span class="vis-dot amber"></span>Negociação</div>
+            <div class="vis-card">
+              <div class="vis-card-line wide"></div>
+              <div class="vis-card-line short"></div>
+            </div>
+            <div class="vis-card">
+              <div class="vis-card-line wide"></div>
+              <div class="vis-card-line mid"></div>
+            </div>
+          </div>
+          <div class="vis-col">
+            <div class="vis-col-title"><span class="vis-dot green"></span>Ganhos</div>
+            <div class="vis-card" style="border-color:rgba(16,185,129,0.2)">
+              <div class="vis-card-line wide"></div>
+              <div class="vis-card-line mid" style="background:rgba(16,185,129,0.4)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-text reveal-right">
+        <p class="section-label">Pipeline automático</p>
+        <h3>Visibilidade total de onde cada lead está</h3>
+        <p>
+          Esqueça planilhas desatualizadas. No Aegis, cada etapa do
+          funil é registrada em tempo real — e você vê o status de
+          cada oportunidade com um clique.
+        </p>
+        <div class="feature-detail">
+          <div class="feature-detail-item">Arraste leads entre as etapas em segundos</div>
+          <div class="feature-detail-item">Histórico completo de interações de cada contato</div>
+          <div class="feature-detail-item">Alerta automático para leads parados há mais de 24h</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2: Alertas inteligentes -->
+    <div class="feature-block reverse">
+      <div class="feature-visual reveal-right" id="vis-2">
+        <div class="vis-notification">
+          <div class="vis-phone">
+            <div class="vis-badge">3</div>
+            <div class="vis-notif-header">
+              <div class="vis-app-icon">
+                <svg viewBox="0 0 16 16"><path d="M8 2C4.686 2 2 4.343 2 7.2c0 1.6.764 3.04 1.979 4.04L3.5 14l2.286-1.04C6.42 13.3 7.189 13.4 8 13.4c3.314 0 6-2.344 6-5.2S11.314 2 8 2z"/></svg>
+              </div>
+              <div>
+                <div class="vis-notif-from">Aegis CRM</div>
+                <div class="vis-notif-time">agora</div>
+              </div>
+            </div>
+            <div class="vis-notif-body">
+              ⚡ Rafael Torres está há 47h sem resposta. É hora de um follow-up!
+            </div>
+          </div>
+          <div class="vis-phone" style="opacity:0.5;transform:scale(0.96);margin-top:-8px">
+            <div class="vis-notif-header">
+              <div class="vis-app-icon" style="background:#1E40AF">
+                <svg viewBox="0 0 16 16"><path d="M8 2C4.686 2 2 4.343 2 7.2c0 1.6.764 3.04 1.979 4.04L3.5 14l2.286-1.04C6.42 13.3 7.189 13.4 8 13.4c3.314 0 6-2.344 6-5.2S11.314 2 8 2z"/></svg>
+              </div>
+              <div>
+                <div class="vis-notif-from">Aegis CRM</div>
+                <div class="vis-notif-time">há 2h</div>
+              </div>
+            </div>
+            <div class="vis-notif-body">
+              🎯 Mariana Lopes abriu sua proposta 3 vezes hoje.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-text reveal-left">
+        <p class="section-label">Alertas inteligentes</p>
+        <h3>O Aegis lembra do que seu time esquece</h3>
+        <p>
+          O sistema monitora o comportamento de cada lead e te avisa
+          no momento exato: quando é hora de ligar, quando a proposta
+          foi lida, quando o contato está esfriando.
+        </p>
+        <div class="feature-detail">
+          <div class="feature-detail-item">Alertas por WhatsApp no horário certo</div>
+          <div class="feature-detail-item">Notificação quando a proposta é aberta pelo cliente</div>
+          <div class="feature-detail-item">Priorização automática dos leads mais quentes</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 3: Relatórios -->
+    <div class="feature-block">
+      <div class="feature-visual reveal-left" id="vis-3">
+        <div class="vis-chart">
+          <div class="vis-chart-header">
+            <div>
+              <div class="vis-metric">
+                <span class="counter" data-target="47">0</span>%
+              </div>
+              <div class="vis-metric-label">aumento em conversão</div>
+            </div>
+            <div class="vis-trend">
+              ↑ +R$ 84k
+            </div>
+          </div>
+          <div class="vis-bars">
+            <div class="vis-bar" style="height:45%"  data-h="45%"></div>
+            <div class="vis-bar" style="height:58%"  data-h="58%"></div>
+            <div class="vis-bar" style="height:38%"  data-h="38%"></div>
+            <div class="vis-bar" style="height:72%"  data-h="72%"></div>
+            <div class="vis-bar" style="height:60%"  data-h="60%"></div>
+            <div class="vis-bar" style="height:88%"  data-h="88%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-text reveal-right">
+        <p class="section-label">Relatórios em tempo real</p>
+        <h3>Decida com dados, não com intuição</h3>
+        <p>
+          Dashboards dinâmicos que mostram de onde vêm seus melhores
+          clientes, quais vendedores convertem mais e quanto de receita
+          está prevista para o mês.
+        </p>
+        <div class="feature-detail">
+          <div class="feature-detail-item">Taxa de conversão por fonte de lead</div>
+          <div class="feature-detail-item">Previsão de faturamento mensal</div>
+          <div class="feature-detail-item">Ranking de performance por vendedor</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ PROVA SOCIAL / MÉTRICAS ═══════════════════════════════ -->
+<section class="proof">
+  <div class="proof-inner">
+    <h2 class="reveal">Resultados de quem <em style="font-style:italic">já usa</em></h2>
+
+    <div class="metrics reveal">
+      <div class="metric">
+        <div class="metric-value">
+          <span class="counter" data-target="42">0</span>%
+        </div>
+        <div class="metric-label">de aumento médio em conversão</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">
+          <span class="counter" data-target="3">0</span>x
+        </div>
+        <div class="metric-label">mais velocidade no pipeline</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">
+          +<span class="counter" data-target="200">0</span>
+        </div>
+        <div class="metric-label">empresas usando o Aegis</div>
+      </div>
+    </div>
+
+    <div class="testimonial reveal">
+      <p class="testimonial-quote">
+        "Antes do Aegis, a gente perdia lead por esquecimento toda semana.
+        Agora o sistema avisa o vendedor, registra tudo e ainda mostra
+        quais leads estão mais quentes. Nossa conversão subiu 42% no
+        primeiro mês."
+      </p>
+      <div class="testimonial-author">
+        <div class="author-avatar">R</div>
+        <div>
+          <div class="author-name">Rodrigo Dantas</div>
+          <div class="author-role">Diretor Comercial — Veloce Marketing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FORMULÁRIO DE CAPTURA ═════════════════════════════════ -->
+<section class="form-section" id="demonstracao">
+  <div class="form-inner">
+    <p class="section-label reveal" style="justify-content:center">
+      Comece agora
+    </p>
+    <h2 class="reveal delay-1">
+      Agende sua demonstração gratuita
+    </h2>
+    <p class="reveal delay-2">
+      Deixe seu contato abaixo. Nossa equipe vai te mostrar o Aegis
+      funcionando no seu próprio cenário de vendas.
+    </p>
+
+    <form id="demo-form" class="reveal delay-3" novalidate>
+      <div class="form-group">
+        <label for="input-name">Seu nome</label>
+        <input
+          type="text"
+          id="input-name"
+          name="name"
+          placeholder="Ex: Victor Aragão"
+          autocomplete="name"
+          required
+        >
+      </div>
+      <div class="form-group">
+        <label for="input-whatsapp">WhatsApp (com DDD)</label>
+        <input
+          type="tel"
+          id="input-whatsapp"
+          name="whatsapp"
+          placeholder="(61) 99999-0000"
+          autocomplete="tel"
+          required
+        >
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg magnetic-btn" id="form-submit" style="width:100%;justify-content:center">
+        Quero minha demonstração gratuita →
+      </button>
+      <p class="form-note">Sem compromisso. Retorno em até 2 horas úteis.</p>
+    </form>
+
+    <div class="form-success" id="form-success" aria-live="polite">
+      <div class="form-success-icon">🎯</div>
+      <h3>Recebemos seu contato!</h3>
+      <p>Nossa equipe vai entrar em contato via WhatsApp em até 2 horas úteis para agendar sua demonstração personalizada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══════════════════════════════════════════════════ -->
+<section class="faq">
+  <h2 class="reveal">Perguntas frequentes</h2>
+  <div class="faq-list reveal">
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        O Aegis CRM se integra com o WhatsApp?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" role="region">
+        Sim. O Aegis possui integração nativa com WhatsApp. Você configura
+        mensagens automáticas que são disparadas no momento exato em que
+        o lead avança no pipeline — sem precisar digitar nada manualmente.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        Quanto tempo leva para implantar?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" role="region">
+        A implantação básica leva menos de um dia. Nosso time configura
+        o CRM para o seu processo comercial específico e já importa
+        seus contatos existentes. Na maioria dos casos, o time começa
+        a usar no mesmo dia da demonstração.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        Precisa instalar algum programa?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" role="region">
+        Não. O Aegis CRM é 100% na nuvem e funciona direto no
+        navegador — em qualquer computador ou celular. Sem instalação,
+        sem manutenção de servidor.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        Meus dados de clientes ficam seguros?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" role="region">
+        Segurança é a base do Aegis. Todos os dados são criptografados
+        de ponta a ponta (AES-256) e armazenados em servidores com
+        redundância e backup automático. Você é o único dono dos seus dados.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <span>© 2026 Aegis CRM. Todos os direitos reservados.</span>
+  <span>Construído para gestores comerciais de verdade.</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
