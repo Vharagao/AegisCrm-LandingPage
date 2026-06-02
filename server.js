@@ -31,14 +31,26 @@ const server = http.createServer((req, res) => {
   });
 });
 
-const PORT = 3000;
-server.listen(PORT, '127.0.0.1', () => {
-  console.log('');
-  console.log('  ╔════════════════════════════════════════╗');
-  console.log('  ║   AEGIS CRM · Landing Page             ║');
-  console.log('  ╠════════════════════════════════════════╣');
-  console.log(`  ║   ✅  http://localhost:${PORT}             ║`);
-  console.log('  ║   Pressione Ctrl+C para encerrar       ║');
-  console.log('  ╚════════════════════════════════════════╝');
-  console.log('');
+function startServer(port) {
+  server.listen(port, '127.0.0.1', () => {
+    console.log('');
+    console.log('  ╔════════════════════════════════════════╗');
+    console.log('  ║   AEGIS CRM · Landing Page             ║');
+    console.log('  ╠════════════════════════════════════════╣');
+    console.log(`  ║   ✅  http://localhost:${port}             ║`);
+    console.log('  ║   Pressione Ctrl+C para encerrar       ║');
+    console.log('  ╚════════════════════════════════════════╝');
+    console.log('');
+  });
+}
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.log(`Porta 3000 ocupada, tentando porta 3001...`);
+    startServer(3001);
+  } else {
+    console.error(err);
+  }
 });
+
+startServer(3000);
