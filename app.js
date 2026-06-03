@@ -626,7 +626,7 @@
     const dots = $$('.carousel-dot');
     if (!track || !prevBtn || !nextBtn || !dots.length) return;
 
-    const maxIndex = 3;
+    const maxIndex = dots.length - 1;
     let current = 0;
     let autoTimer = null;
 
@@ -970,7 +970,7 @@
     const messages = [
       { sender: 'vendedor', text: 'Aegis, quanto faturamos em contratos fechados este mês até agora?' },
       { sender: 'copilot', isTyping: true, status: 'Acessando banco de dados do CRM... 🔍' },
-      { sender: 'copilot', text: 'Este mês o faturamento acumulado é de <strong>R$ 184.500</strong> em contratos fechados! Isso representa um aumento de <strong>14%</strong> em relação ao mesmo período del mês passado. 🚀' },
+      { sender: 'copilot', text: 'Este mês o faturamento acumulado é de <strong>R$ 184.500</strong> em contratos fechados! Isso representa um aumento de <strong>14%</strong> em relação ao mesmo período do mês passado. 🚀' },
       { sender: 'vendedor', text: 'Excelente! E quem é o vendedor líder em vendas no momento?' },
       { sender: 'copilot', isTyping: true, status: 'Consultando ranking de vendas... 🏆' },
       { sender: 'copilot', text: 'A líder de vendas deste mês é a <strong>Giovanna</strong> com R$ 74.000 fechados, seguida de perto pelo <strong>Lucas</strong> com R$ 68.000. Deseja que eu envie o relatório completo por PDF?' },

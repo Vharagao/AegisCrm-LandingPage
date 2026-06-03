@@ -16,6 +16,13 @@ const MIME = {
 
 const server = http.createServer((req, res) => {
   const urlPath = req.url === '/' ? '/index.html' : req.url.split('?')[0];
+  
+  if (urlPath.includes('..')) {
+    res.writeHead(403, { 'Content-Type': 'text/plain' });
+    res.end('403 - Acesso Negado');
+    return;
+  }
+
   const filePath = path.join(__dirname, urlPath);
   const ext = path.extname(filePath);
   const contentType = (MIME[ext] || 'text/plain') + '; charset=utf-8';
