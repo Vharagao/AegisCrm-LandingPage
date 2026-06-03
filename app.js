@@ -915,4 +915,166 @@
     });
   })();
 
+  /* ═══════════════════════════════════════════════════════════════════════
+     19. HERO WHATSAPP 3D TILT EFFECT
+     Mockup rotates slightly based on mouse movement within the Hero
+     ═══════════════════════════════════════════════════════════════════════ */
+  (function initHeroTilt() {
+    const hero = $('#topo');
+    const mockup = $('.whatsapp-mockup');
+    if (!hero || !mockup) return;
+
+    let rAF = 0;
+
+    hero.addEventListener('mousemove', (e) => {
+      if (window.innerWidth <= 900) return; // Disable tilt on mobile
+
+      const rect = hero.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Calculate percentage offset from center (-1 to 1)
+      const tiltX = (centerY - y) / centerY * 8; // Max 8 degrees pitch
+      const tiltY = (x - centerX) / centerX * 8;  // Max 8 degrees yaw
+
+      if (!rAF) {
+        rAF = requestAnimationFrame(() => {
+          // Keep base rotation rotateY(-14deg) rotateX(6deg) and apply mouse delta
+          mockup.style.transform = `rotateY(${-14 + tiltY}deg) rotateX(${6 + tiltX}deg)`;
+          rAF = 0;
+        });
+      }
+    });
+
+    hero.addEventListener('mouseleave', () => {
+      if (rAF) {
+        cancelAnimationFrame(rAF);
+        rAF = 0;
+      }
+      mockup.style.transform = 'rotateY(-14deg) rotateX(6deg)';
+    });
+  })();
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     20. HERO WHATSAPP CONVERSATION SIMULATOR
+     Simulates real-time sales co-pilot database queries
+     ═══════════════════════════════════════════════════════════════════════ */
+  (function initWhatsAppSimulator() {
+    const chatArea = $('#wa-chat-messages');
+    const statusText = $('#wa-bot-status');
+    if (!chatArea || !statusText) return;
+
+    const messages = [
+      { sender: 'vendedor', text: 'Aegis, quanto faturamos em contratos fechados este mês até agora?' },
+      { sender: 'copilot', isTyping: true, status: 'Acessando banco de dados do CRM... 🔍' },
+      { sender: 'copilot', text: 'Este mês o faturamento acumulado é de <strong>R$ 184.500</strong> em contratos fechados! Isso representa um aumento de <strong>14%</strong> em relação ao mesmo período del mês passado. 🚀' },
+      { sender: 'vendedor', text: 'Excelente! E quem é o vendedor líder em vendas no momento?' },
+      { sender: 'copilot', isTyping: true, status: 'Consultando ranking de vendas... 🏆' },
+      { sender: 'copilot', text: 'A líder de vendas deste mês é a <strong>Giovanna</strong> com R$ 74.000 fechados, seguida de perto pelo <strong>Lucas</strong> com R$ 68.000. Deseja que eu envie o relatório completo por PDF?' },
+      { sender: 'vendedor', text: 'Sim, por favor! E me avise se tem algum lead frio precisando de atenção.' },
+      { sender: 'copilot', isTyping: true, status: 'Analisando leads sem interação... 📋' },
+      { sender: 'copilot', text: 'Relatório enviado! Identifiquei <strong>3 leads</strong> parados na etapa de proposta há mais de 48h. Recomendo mandar um follow-up para a <strong>AC Imóveis</strong> (Rafael Torres). Posso redigir um template de mensagem?' },
+      { sender: 'vendedor', text: 'Ótimo, obrigado!' }
+    ];
+
+    let messageIndex = 0;
+
+    function formatTime() {
+      const now = new Date();
+      const hrs = String(now.getHours()).padStart(2, '0');
+      const mins = String(now.getMinutes()).padStart(2, '0');
+      return `${hrs}:${mins}`;
+    }
+
+    function createBubble(msg) {
+      const bubble = document.createElement('div');
+      bubble.className = `wa-bubble ${msg.sender}`;
+      
+      const textSpan = document.createElement('span');
+      textSpan.innerHTML = msg.text;
+      bubble.appendChild(textSpan);
+
+      const timeSpan = document.createElement('span');
+      timeSpan.className = 'wa-bubble-time';
+      timeSpan.textContent = formatTime();
+      
+      if (msg.sender === 'vendedor') {
+        const check = document.createElement('span');
+        check.className = 'wa-double-check';
+        check.innerHTML = ' &#10004;&#10004;';
+        timeSpan.appendChild(check);
+      }
+      
+      bubble.appendChild(timeSpan);
+      return bubble;
+    }
+
+    function createTypingIndicator() {
+      const indicator = document.createElement('div');
+      indicator.className = 'wa-typing';
+      indicator.id = 'wa-typing-indicator';
+      
+      for (let i = 0; i < 3; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'wa-dot';
+        indicator.appendChild(dot);
+      }
+      return indicator;
+    }
+
+    function runDialogue() {
+      if (messageIndex >= messages.length) {
+        // Dialogue ended, wait 8 seconds and restart
+        setTimeout(() => {
+          chatArea.innerHTML = '';
+          messageIndex = 0;
+          runDialogue();
+        }, 8000);
+        return;
+      }
+
+      const currentMsg = messages[messageIndex];
+
+      if (currentMsg.isTyping) {
+        // Show typing indicator
+        statusText.textContent = currentMsg.status;
+        const typing = createTypingIndicator();
+        chatArea.appendChild(typing);
+        chatArea.scrollTop = chatArea.scrollHeight;
+
+        // Wait 2.2 seconds, then replace typing with the actual text message
+        setTimeout(() => {
+          const indicator = document.getElementById('wa-typing-indicator');
+          if (indicator) indicator.remove();
+          
+          statusText.textContent = 'IA Ativa · Online';
+          
+          messageIndex++; // move to actual message
+          const textMsg = messages[messageIndex];
+          const bubble = createBubble(textMsg);
+          chatArea.appendChild(bubble);
+          chatArea.scrollTop = chatArea.scrollHeight;
+
+          // Process next message after a pause
+          messageIndex++;
+          setTimeout(runDialogue, 2000);
+        }, 2200);
+      } else {
+        // Salesperson sends message immediately
+        const bubble = createBubble(currentMsg);
+        chatArea.appendChild(bubble);
+        chatArea.scrollTop = chatArea.scrollHeight;
+
+        messageIndex++;
+        setTimeout(runDialogue, 1800);
+      }
+    }
+
+    // Delay start of first message slightly for better pacing
+    setTimeout(runDialogue, 1000);
+  })();
+
 })();

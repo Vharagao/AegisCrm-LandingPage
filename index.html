@@ -74,25 +74,68 @@
 </header>
 
 <!-- ═══ HERO ══════════════════════════════════════════════════ -->
+<!-- ═══ HERO ══════════════════════════════════════════════════ -->
 <section class="hero" id="topo">
-  <div class="hero-badge reveal">Para gestores comerciais de PMEs</div>
-
-  <h1 class="reveal delay-1">
-    O CRM que seu vendedor<br>
-    realmente vai <em>usar</em>
-  </h1>
-
-  <div class="typewriter-container reveal delay-2">
-    <span id="typewriter"></span><span class="typewriter-cursor" aria-hidden="true"></span>
-  </div>
-
-  <div class="hero-cta reveal delay-3">
-    <a href="#demonstracao" class="btn btn-primary btn-lg magnetic-btn" id="hero-cta">
-      Quero ver o Aegis em ação
-    </a>
-    <button type="button" class="btn btn-outline btn-lg" id="video-trigger">
-      <span class="play-icon" aria-hidden="true">▶</span> Ver demo em 2 minutos
-    </button>
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge reveal">Para gestores comerciais de PMEs</div>
+      <h1 class="reveal delay-1">
+        O CRM que seu vendedor<br>
+        realmente vai <em>usar</em>
+      </h1>
+      <div class="typewriter-container reveal delay-2">
+        <span id="typewriter"></span><span class="typewriter-cursor" aria-hidden="true"></span>
+      </div>
+      <div class="hero-cta reveal delay-3">
+        <a href="#demonstracao" class="btn btn-primary btn-lg magnetic-btn" id="hero-cta">
+          Quero ver o Aegis em ação
+        </a>
+        <button type="button" class="btn btn-outline btn-lg" id="video-trigger">
+          <span class="play-icon" aria-hidden="true">▶</span> Ver demo em 2 minutos
+        </button>
+      </div>
+    </div>
+    
+    <div class="hero-mockup-area reveal delay-2">
+      <div class="whatsapp-mockup-wrapper">
+        <div class="whatsapp-mockup">
+          <div class="wa-header">
+            <div class="wa-header-left">
+              <div class="wa-avatar">
+                <div class="logo-mark" aria-hidden="true" style="transform: scale(0.8)">
+                  <svg viewBox="0 0 14 14"><polyline points="4,7 6,9 10,5"/></svg>
+                </div>
+              </div>
+              <div class="wa-status-info">
+                <span class="wa-name">Aegis Co-Pilot</span>
+                <span class="wa-status" id="wa-bot-status">IA Ativa · Online</span>
+              </div>
+            </div>
+            <div class="wa-header-right">
+              <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+              </svg>
+              <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.57a.987.987 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.59c0-.55-.45-1-1-1z"/>
+              </svg>
+            </div>
+          </div>
+          
+          <div class="wa-chat-area" id="wa-chat-messages">
+            <!-- Simulated messages will be dynamically added here -->
+          </div>
+          
+          <div class="wa-input-area">
+            <div class="wa-input-placeholder">Mensagem</div>
+            <div class="wa-send-btn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M2 21l21-9L2 3v7l15 2-15 2z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="scroll-hint" aria-hidden="true">
